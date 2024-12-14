@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}PawPalace{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="carousel">
+    </div>
+    <div class="Catcontainer">
+        <div class="Catinner">
+            {% for i in Catlist %}
+            <div class="Cat">
+                <div class="Cat-window-container" id="{{ forloop.counter }}">
+                    <div class="Cat-window-inner">
+                        <img class="Cat-image" src="{{ i.Catpic.url }}">
+                        <h1 class="Cat-title">{{ i.Cattitle }}</h1>
+                        <div class="Cat-description">{{ i.Catdescriptionshort }}</div>
+                        <a class="Cat-more" href="{% url 'Cat_detail' i.pk %}">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

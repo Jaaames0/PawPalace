@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}{{Cat.Cattitle}}{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="main-Cat-inner">
+        <div class="main-Cat-window">
+            <div class="main-Cat-info-container">
+                <img src="{{ Cat.Catpic.url }}" class="main-Cat-img">
+            </div>
+        </div>
+        <div class="main-Cat-description">
+            <div class="description-container">
+                <div class="description-title">{{ Cat.Catname }}</div>
+                <div class="description">
+                    {% autoescape off %}{{ Cat.Catdescription }}{% endautoescape %}
+                </div>
+                <div class="main-Cat-host-title">Приют</div>
+                <div class="main-Cat-host-description-container">
+                    <img class="main-Cat-host-avatar" src="{{ Cat.hostpic.url }}">
+                    <div class="main-Cat-host-description">{{ hostname }}</div>
+                    <div class="main-Cat-host-description">{{ Cat.hostemail }}</div>
+                    <div class="main-Cat-host-description">{{ Cat.Catplace }}</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content%}

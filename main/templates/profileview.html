@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Личный Кабинет{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="account-inner">
+        <div class="account-window">
+            <h1 class="account-title">Настройки</h1>
+            <div class="input-container">
+                <div class="input-question">Логин</div>
+                <input class="form-control" type="text" value="{{ user.username }}">
+            </div>
+            <div class="input-container">
+                <div class="input-question">Фамилия</div>
+                <input class="form-control" type="text" value="{{ user.last_name }}">
+            </div>
+            <div class="input-container">
+                <div class="input-question">Имя</div>
+                <input class="form-control" type="text" value="{{ user.first_name }}">
+            </div>
+            <div class="input-container">
+                <div class="input-question">Email</div>
+                <input type="email" class="form-control" type="text" value="{{ user.email }}">
+            </div>
+            <div class="input-container">
+                <div class="input-question">Телефон</div>
+                <input type="tel" maxlength="12" class="form-control" type="text" value="{{ user.mobilephone }}">
+            </div>
+            <div class="account-buttons">
+                <div class="left buttons">
+
+                    <input type="button" value="Выйти" class="sign-out-button" onClick="window.location='../logout/'">
+                    <input type="button" value="Изменить пароль" class="change-password-button" onClick="window.location='../passwordchange/'">
+                </div>
+                <input type="button" class="save-button" value="Сохранить">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
